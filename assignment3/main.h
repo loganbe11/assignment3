@@ -3,6 +3,7 @@
 
 int compareIntFunction(const void *first,const void *second);
 
+void printDataFunction( void *data);
 typedef struct PatientData
 {
   char patientName[100];

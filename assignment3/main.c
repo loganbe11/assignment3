@@ -6,7 +6,7 @@
 #include "main.h"
 
 
-/**A hospital priority queue simulation.  Patients arrive at random intervals from 0 to 14 minutes
+/**A hospital priority queue simulation.  Patients arrive at random intervals from 0 to 11 minutes
  *after the previous patient (first patient arrives at time 0 minutes).
  *@param filename of formatted patient data (each line has name, priority, ailment code)
  **/
@@ -14,13 +14,17 @@ int main(int argc, char *argv[])
 {
   FILE *fp;  //pointer to input data file containing patient data
 
-  Heap *heap = createHeap(100,MIN_HEAP,&free,NULL,compareIntFunction);
+  Heap *heap = createHeap(100,MIN_HEAP,&free,printDataFunction,compareIntFunction);
 
   char patientName[100];    //the patient name read from the input file
   int  patientInitPriority; //the patient initial priority read from the input file
   char patientSymptom[3];   //the patient symptom/ailment code read from the input file
-  int  arrivalTime = 0;     //the arrival time (in minutes) at the hospital from the start of the simulation
 
+  int  arrivalTime = 0;     //the arrival time (in minutes) at the hospital from the start of the simulation
+  int  currentTime = 0;     //the current hospital time (in minutes) from the start of the simulation
+
+  char specialDoc[3];
+  strcpy(specialDoc,"SK\n"); //use this to set special doctor type
   srand(time(NULL)); //setting seed
 
   //open the input data file
@@ -40,14 +44,34 @@ int main(int argc, char *argv[])
     strcpy(newData->patientSymptom, patientSymptom);
     newData->arrivalTime = arrivalTime;
 
+    while( arrivalTime > currentTime)
+    {
+      if(heap->nodeArray[0].data==NULL)
+      {
+        currentTime = arrivalTime;
+      }
+      else
+      {
+        printf("Treating at time %d\t",currentTime);
+        printDataFunction(heap->nodeArray[0].data);
+        deleteMinOrMax(heap);
+        currentTime = currentTime + 10;
+      }
+    }
     insertHeapNode(heap, (void*)newData);
-    printf("Patient: %s \t Priority: %d \t Code: %s \t Arrival Time: %d\n",patientName,patientInitPriority,patientSymptom,arrivalTime);
+    printf("Patient Name: %s \t Patient Priority: %d \t Code: %s \t Arrival Time: %d\n",patientName,patientInitPriority,patientSymptom,arrivalTime);
 
-    arrivalTime=arrivalTime +  (rand() % 15); //random arrival time between 0 and 14 min to next patient arriving
-
+    arrivalTime=arrivalTime +  (rand() % 11); //random arrival time between 0 and 110 min to next patient arriving
   }
 
   fclose(fp); //close the data file
+  while(heap->nodeArray[0].data!=NULL){
+        printf("Treating at time %d\t",currentTime);
+        printDataFunction(heap->nodeArray[0].data);
+        deleteMinOrMax(heap);
+        currentTime = currentTime + 10;
+  }
+
 
 
   return 0;
@@ -57,19 +81,30 @@ int compareIntFunction(const void *first,const void *second)
 {
   const PatientData* firstPatient = first;
   const PatientData* secondPatient = second;
+  float PriorityWithAgeOne = firstPatient->patientInitPriority + (firstPatient->arrivalTime - 200)*0.02;
+  float PriorityWithAgeTwo = secondPatient->patientInitPriority + (secondPatient->arrivalTime - 200)*0.02;
+
 
   //printf("Comparing %d and %d\n",firstPatient->patientInitPriority,secondPatient->patientInitPriority );
 
-  if(firstPatient->patientInitPriority==secondPatient->patientInitPriority)
+  if(PriorityWithAgeOne==PriorityWithAgeTwo)
   {
     //printf("0:equal\n");
     return 0;
   }
-  else if(firstPatient->patientInitPriority>secondPatient->patientInitPriority)
+  else if(PriorityWithAgeOne>PriorityWithAgeTwo)
   {
     //printf("1:first greater\n");
     return 1;
   }
   //printf("-1:second greater\n");
   return -1;
+}
+
+void printDataFunction(void *data)
+{
+  PatientData* patient = data;
+
+  printf("Patient Name: %s \t Patient Priority: %d \t Code: %s \t Arrival Time: %d\n",patient->patientName,patient->patientInitPriority,patient->patientSymptom,patient->arrivalTime);
+  return;
 }
