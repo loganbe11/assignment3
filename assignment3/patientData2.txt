@@ -1,0 +1,15 @@
+Shirley	3	EC
+Doug	4	HN
+Karen	2	NC
+Logan	3	SK
+Sydney	1	TR
+Blake	3	CV
+Kelly	2	SA
+Chelsea	4	MH
+Sandra	5	GI
+Rippley	3	SA
+Ben	1	TR
+Shelby	4	RC
+Faith	2	EV
+Emily	3	CV
+

@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1531112208 source:c:\users\logan\desktop\cis2520\lab3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"heap.h"
+	"main.h"
+
+1530929743 c:\users\logan\desktop\cis2520\lab3\heap.h
+	"typedefs.h"
+
+1530929743 c:\users\logan\desktop\cis2520\lab3\typedefs.h
+
+1530928168 c:\users\logan\desktop\cis2520\lab3\main.h
+
+1531182930 source:c:\users\logan\desktop\cis2520\lab3\heap.c
+	<stdio.h>
+	<stdlib.h>
+	"heap.h"
+
