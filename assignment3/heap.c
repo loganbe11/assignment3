@@ -51,7 +51,7 @@ void heapify(Heap *heap)
 
   for(; i>0; i--)
   {
-    parent=floor((float)i/2);
+    parent=((float)i/2);
     if (heap->type==MAX_HEAP)
     {
       if (heap->compare(heap->nodeArray[i].data,heap->nodeArray[parent].data)>0)

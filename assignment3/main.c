@@ -21,18 +21,24 @@ int main(int argc, char *argv[])
   char patientSymptom[3];   //the patient symptom/ailment code read from the input file
 
   int  arrivalTime = 0;     //the arrival time (in minutes) at the hospital from the start of the simulation
-  int  currentTime = 0;     //the current hospital time (in minutes) from the start of the simulation
+  int  gpTime = 0;     //the current hospital time (in minutes) from the start of the simulation
+  int  specialistTime = 0;
+  char specialistField[3]= "CV";
 
-  char specialDoc[3];
-  strcpy(specialDoc,"SK\n"); //use this to set special doctor type
   srand(time(NULL)); //setting seed
 
   //open the input data file
   fp = fopen(argv[1], "r");
+
+  //open the output file report.txt for writing
   fpOut = fopen("report.txt","w");
-  fprintf(fpOut,"Order of treatment\n");
+
+  //Print out a header line or two in the output file
+  fprintf(fpOut,"Order of Treatment: data file: %s \n",argv[1]);
+  fprintf(fpOut,"--------------------------------------------\n");
 
 
+  //print out some terminal information while program is running
   printf("Data File Information \n");
 
   //read in the input data file and store the data into a priority queue/heap (sorted by arrival time)
@@ -46,19 +52,20 @@ int main(int argc, char *argv[])
     strcpy(newData->patientSymptom, patientSymptom);
     newData->arrivalTime = arrivalTime;
 
-    while( arrivalTime > currentTime)
+    while( arrivalTime > gpTime)
     {
       if(heap->nodeArray[0].data==NULL)
       {
-        currentTime = arrivalTime;
+        gpTime = arrivalTime;
       }
       else
       {
-        printf("Treating at time %d\t",currentTime);
+        printf("Treating at time %d\t",gpTime);
+        fprintf(fpOut,"Treating at time %d\t",gpTime);
         printDataFunction(heap->nodeArray[0].data);
 
         deleteMinOrMax(heap);
-        currentTime = currentTime + 10;
+        gpTime = gpTime + 10;
       }
     }
     insertHeapNode(heap, (void*)newData);
@@ -69,16 +76,15 @@ int main(int argc, char *argv[])
 
   fclose(fp); //close the data file
 
-
-
-
-  while(heap->nodeArray[0].data!=NULL){
-        printf("Treating at time %d\t",currentTime);
-        printDataFunction(heap->nodeArray[0].data);
-        deleteMinOrMax(heap);
-        currentTime = currentTime + 10;
+  while(heap->nodeArray[0].data!=NULL)
+  {
+    printf("Treating at time %d\t",gpTime);
+    fprintf(fpOut,"Treating at time %d\t",gpTime);
+    printDataFunction(heap->nodeArray[0].data);
+    deleteMinOrMax(heap);
+    gpTime = gpTime + 10;
   }
-    fclose(fpOut);
+  fclose(fpOut);
 
 
   return 0;

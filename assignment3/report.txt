@@ -1,41 +1,42 @@
-Order of treatment
-Patient Name: Shirley 	 Patient Priority: 5 	 Code: EC 	 Arrival Time: 0
-Patient Name: Karen 	 Patient Priority: 2 	 Code: NC 	 Arrival Time: 10
-Patient Name: Sydney 	 Patient Priority: 1 	 Code: TR 	 Arrival Time: 17
-Patient Name: Kelly 	 Patient Priority: 2 	 Code: SA 	 Arrival Time: 29
-Patient Name: Logan 	 Patient Priority: 3 	 Code: SK 	 Arrival Time: 15
-Patient Name: Blake 	 Patient Priority: 3 	 Code: CV 	 Arrival Time: 21
-Patient Name: Ben 	 Patient Priority: 1 	 Code: TR 	 Arrival Time: 57
-Patient Name: Doug 	 Patient Priority: 4 	 Code: HN 	 Arrival Time: 1
-Patient Name: Faith 	 Patient Priority: 2 	 Code: EV 	 Arrival Time: 68
-Patient Name: Rippley 	 Patient Priority: 3 	 Code: SA 	 Arrival Time: 50
-Patient Name: Matt 	 Patient Priority: 1 	 Code: NC 	 Arrival Time: 99
-Patient Name: Callum 	 Patient Priority: 2 	 Code: TR 	 Arrival Time: 86
-Patient Name: Brenden 	 Patient Priority: 1 	 Code: EC 	 Arrival Time: 120
-Patient Name: Ross 	 Patient Priority: 2 	 Code: CV 	 Arrival Time: 99
-Patient Name: Chelsea 	 Patient Priority: 4 	 Code: MH 	 Arrival Time: 33
-Patient Name: Emily 	 Patient Priority: 3 	 Code: CV 	 Arrival Time: 76
-Patient Name: Julliete 	 Patient Priority: 2 	 Code: EC 	 Arrival Time: 110
-Patient Name: Issac 	 Patient Priority: 1 	 Code: SA 	 Arrival Time: 153
-Patient Name: Megan 	 Patient Priority: 3 	 Code: EC 	 Arrival Time: 89
-Patient Name: Shelby 	 Patient Priority: 4 	 Code: RC 	 Arrival Time: 65
-Patient Name: Sandra 	 Patient Priority: 5 	 Code: GI 	 Arrival Time: 41
-Patient Name: Ryan 	 Patient Priority: 3 	 Code: TR 	 Arrival Time: 112
-Patient Name: Isabella 	 Patient Priority: 4 	 Code: SK 	 Arrival Time: 89
-Patient Name: Sofia 	 Patient Priority: 2 	 Code: GI 	 Arrival Time: 157
-Patient Name: Nicole 	 Patient Priority: 3 	 Code: HN 	 Arrival Time: 134
-Patient Name: Justin 	 Patient Priority: 4 	 Code: GI 	 Arrival Time: 106
-Patient Name: Sheil 	 Patient Priority: 2 	 Code: RC 	 Arrival Time: 175
-Patient Name: Clayton 	 Patient Priority: 3 	 Code: SA 	 Arrival Time: 144
-Patient Name: Rebecca 	 Patient Priority: 1 	 Code: CV 	 Arrival Time: 225
-Patient Name: Mel 	 Patient Priority: 1 	 Code: TR 	 Arrival Time: 229
-Patient Name: Kaitlyn 	 Patient Priority: 4 	 Code: MH 	 Arrival Time: 130
-Patient Name: Ben 	 Patient Priority: 3 	 Code: EV 	 Arrival Time: 165
-Patient Name: Liam 	 Patient Priority: 2 	 Code: RC 	 Arrival Time: 201
-Patient Name: Lauren 	 Patient Priority: 5 	 Code: SA 	 Arrival Time: 109
-Patient Name: Alexis 	 Patient Priority: 2 	 Code: SK 	 Arrival Time: 225
-Patient Name: Gurtej 	 Patient Priority: 3 	 Code: SA 	 Arrival Time: 192
-Patient Name: John 	 Patient Priority: 4 	 Code: TR 	 Arrival Time: 184
-Patient Name: Maggie 	 Patient Priority: 4 	 Code: GI 	 Arrival Time: 208
-Patient Name: Kanoa 	 Patient Priority: 5 	 Code: SK 	 Arrival Time: 184
-Patient Name: Eric 	 Patient Priority: 4 	 Code: NC 	 Arrival Time: 218
+Order of Treatment: data file: patientData1.txt 
+--------------------------------------------
+Treating at time 0	Patient Name: Doug 	 Patient Priority: 4 	 Code: HN 	 Arrival Time: 0
+Treating at time 10	Patient Name: Karen 	 Patient Priority: 2 	 Code: NC 	 Arrival Time: 8
+Treating at time 20	Patient Name: Sydney 	 Patient Priority: 1 	 Code: TR 	 Arrival Time: 17
+Treating at time 30	Patient Name: Kelly 	 Patient Priority: 2 	 Code: SA 	 Arrival Time: 29
+Treating at time 40	Patient Name: Ben 	 Patient Priority: 1 	 Code: TR 	 Arrival Time: 37
+Treating at time 50	Patient Name: Logan 	 Patient Priority: 3 	 Code: SK 	 Arrival Time: 16
+Treating at time 60	Patient Name: Faith 	 Patient Priority: 2 	 Code: EV 	 Arrival Time: 55
+Treating at time 70	Patient Name: Blake 	 Patient Priority: 3 	 Code: CV 	 Arrival Time: 23
+Treating at time 80	Patient Name: Matt 	 Patient Priority: 1 	 Code: NC 	 Arrival Time: 74
+Treating at time 90	Patient Name: Rippley 	 Patient Priority: 3 	 Code: SA 	 Arrival Time: 32
+Treating at time 100	Patient Name: Brenden 	 Patient Priority: 1 	 Code: EC 	 Arrival Time: 91
+Treating at time 110	Patient Name: Callum 	 Patient Priority: 2 	 Code: TR 	 Arrival Time: 70
+Treating at time 120	Patient Name: Ross 	 Patient Priority: 2 	 Code: CV 	 Arrival Time: 73
+Treating at time 130	Patient Name: Issac 	 Patient Priority: 1 	 Code: SA 	 Arrival Time: 112
+Treating at time 140	Patient Name: Julliete 	 Patient Priority: 2 	 Code: EC 	 Arrival Time: 86
+Treating at time 150	Patient Name: Chelsea 	 Patient Priority: 4 	 Code: MH 	 Arrival Time: 29
+Treating at time 160	Patient Name: Emily 	 Patient Priority: 3 	 Code: CV 	 Arrival Time: 65
+Treating at time 170	Patient Name: Shirley 	 Patient Priority: 5 	 Code: EC 	 Arrival Time: 0
+Treating at time 180	Patient Name: Megan 	 Patient Priority: 3 	 Code: EC 	 Arrival Time: 71
+Treating at time 190	Patient Name: Shelby 	 Patient Priority: 4 	 Code: RC 	 Arrival Time: 45
+Treating at time 200	Patient Name: Sofia 	 Patient Priority: 2 	 Code: GI 	 Arrival Time: 119
+Treating at time 210	Patient Name: Ryan 	 Patient Priority: 3 	 Code: TR 	 Arrival Time: 90
+Treating at time 220	Patient Name: Sandra 	 Patient Priority: 5 	 Code: GI 	 Arrival Time: 32
+Treating at time 230	Patient Name: Sheil 	 Patient Priority: 2 	 Code: RC 	 Arrival Time: 132
+Treating at time 240	Patient Name: Isabella 	 Patient Priority: 4 	 Code: SK 	 Arrival Time: 70
+Treating at time 250	Patient Name: Nicole 	 Patient Priority: 3 	 Code: HN 	 Arrival Time: 106
+Treating at time 260	Patient Name: Rebecca 	 Patient Priority: 1 	 Code: CV 	 Arrival Time: 175
+Treating at time 270	Patient Name: Clayton 	 Patient Priority: 3 	 Code: SA 	 Arrival Time: 111
+Treating at time 280	Patient Name: Justin 	 Patient Priority: 4 	 Code: GI 	 Arrival Time: 78
+Treating at time 290	Patient Name: Mel 	 Patient Priority: 1 	 Code: TR 	 Arrival Time: 182
+Treating at time 300	Patient Name: Ben 	 Patient Priority: 3 	 Code: EV 	 Arrival Time: 125
+Treating at time 310	Patient Name: Kaitlyn 	 Patient Priority: 4 	 Code: MH 	 Arrival Time: 96
+Treating at time 320	Patient Name: Liam 	 Patient Priority: 2 	 Code: RC 	 Arrival Time: 164
+Treating at time 330	Patient Name: Alexis 	 Patient Priority: 2 	 Code: SK 	 Arrival Time: 180
+Treating at time 340	Patient Name: Lauren 	 Patient Priority: 5 	 Code: SA 	 Arrival Time: 84
+Treating at time 350	Patient Name: Gurtej 	 Patient Priority: 3 	 Code: SA 	 Arrival Time: 155
+Treating at time 360	Patient Name: John 	 Patient Priority: 4 	 Code: TR 	 Arrival Time: 141
+Treating at time 370	Patient Name: Maggie 	 Patient Priority: 4 	 Code: GI 	 Arrival Time: 166
+Treating at time 380	Patient Name: Eric 	 Patient Priority: 4 	 Code: NC 	 Arrival Time: 170
+Treating at time 390	Patient Name: Kanoa 	 Patient Priority: 5 	 Code: SK 	 Arrival Time: 145
