@@ -5,6 +5,7 @@
 #include "heap.h"
 #include "main.h"
 
+FILE *fpOut; //output file for report.txt
 
 /**A hospital priority queue simulation.  Patients arrive at random intervals from 0 to 11 minutes
  *after the previous patient (first patient arrives at time 0 minutes).
@@ -13,7 +14,6 @@
 int main(int argc, char *argv[])
 {
   FILE *fp;  //pointer to input data file containing patient data
-
   Heap *heap = createHeap(100,MIN_HEAP,&free,printDataFunction,compareIntFunction);
 
   char patientName[100];    //the patient name read from the input file
@@ -29,6 +29,8 @@ int main(int argc, char *argv[])
 
   //open the input data file
   fp = fopen(argv[1], "r");
+  fpOut = fopen("report.txt","w");
+  fprintf(fpOut,"Order of treatment\n");
 
 
   printf("Data File Information \n");
@@ -54,6 +56,7 @@ int main(int argc, char *argv[])
       {
         printf("Treating at time %d\t",currentTime);
         printDataFunction(heap->nodeArray[0].data);
+
         deleteMinOrMax(heap);
         currentTime = currentTime + 10;
       }
@@ -65,13 +68,17 @@ int main(int argc, char *argv[])
   }
 
   fclose(fp); //close the data file
+
+
+
+
   while(heap->nodeArray[0].data!=NULL){
         printf("Treating at time %d\t",currentTime);
         printDataFunction(heap->nodeArray[0].data);
         deleteMinOrMax(heap);
         currentTime = currentTime + 10;
   }
-
+    fclose(fpOut);
 
 
   return 0;
@@ -81,8 +88,8 @@ int compareIntFunction(const void *first,const void *second)
 {
   const PatientData* firstPatient = first;
   const PatientData* secondPatient = second;
-  float PriorityWithAgeOne = firstPatient->patientInitPriority + (firstPatient->arrivalTime - 200)*0.02;
-  float PriorityWithAgeTwo = secondPatient->patientInitPriority + (secondPatient->arrivalTime - 200)*0.02;
+  float PriorityWithAgeOne = firstPatient->patientInitPriority + (firstPatient->arrivalTime - 200)*0.03;
+  float PriorityWithAgeTwo = secondPatient->patientInitPriority + (secondPatient->arrivalTime - 200)*0.03;
 
 
   //printf("Comparing %d and %d\n",firstPatient->patientInitPriority,secondPatient->patientInitPriority );
@@ -106,5 +113,7 @@ void printDataFunction(void *data)
   PatientData* patient = data;
 
   printf("Patient Name: %s \t Patient Priority: %d \t Code: %s \t Arrival Time: %d\n",patient->patientName,patient->patientInitPriority,patient->patientSymptom,patient->arrivalTime);
+  fprintf(fpOut,"Patient Name: %s \t Patient Priority: %d \t Code: %s \t Arrival Time: %d\n",patient->patientName,patient->patientInitPriority,patient->patientSymptom,patient->arrivalTime);
+
   return;
 }
